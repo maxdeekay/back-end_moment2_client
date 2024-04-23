@@ -86,7 +86,7 @@ function sendMessage(message, error) {
 function formatDate(date) {
     if (!date) return "Pågående";
     const d = typeof(date) === "string" ? new Date(date) : date;
-    let values = [d.getFullYear(), d.getMonth(), d.getDate()];
+    let values = [d.getFullYear(), d.getMonth()+1, d.getDate()];
     values = values.map((value) => {
         return value.toString().length < 2 ? "0" + value : value;
     });
